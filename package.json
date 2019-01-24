@@ -1,0 +1,46 @@
+{
+  "name": "music",
+  "version": "1.0.0",
+  "description": "Data experiments with various music-based APIs",
+  "author": "Alec Lomas <alec@lowmess.com>",
+  "license": "GPL-3.0-or-later",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lowmess/music.git"
+  },
+  "bugs": {
+    "url": "https://github.com/lowmess/music/issues"
+  },
+  "homepage": "https://music.lowmess.com",
+  "scripts": {
+    "start": "parcel serve src/*.html src/**/*.html --open",
+    "build": "parcel build src/*.html src/**/*.html",
+    "precommit": "lint-staged"
+  },
+  "dependencies": {
+    "@babel/polyfill": "^7.2.5",
+    "unfetch": "^4.0.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.2.2",
+    "@babel/preset-env": "^7.3.1",
+    "babel-eslint": "^10.0.1",
+    "eslint": "^5.12.1",
+    "eslint-config-lowmess": "^2.0.0",
+    "husky": "^1.3.1",
+    "lint-staged": "^8.1.0",
+    "parcel-bundler": "^1.11.0",
+    "prettier": "^1.16.1"
+  },
+  "lint-staged": {
+    "*.js": [
+      "eslint --fix",
+      "prettier --write",
+      "git add"
+    ],
+    "*.{md,css,json}": [
+      "prettier --write",
+      "git add"
+    ]
+  }
+}
