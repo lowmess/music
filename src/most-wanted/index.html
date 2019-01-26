@@ -5,13 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <title>Most Wanted Records</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link
-      rel="stylesheet"
-      href="https://unpkg.com/tachyons@4/css/tachyons.min.css"
-    />
+    <link rel="stylesheet" href="./main.css" />
   </head>
   <body class="flex pa4 bg-red sans-serif lh-copy dark-gray">
-    <div class="w-100 mw9" style="margin: auto;">
+    <div class="container w-100 mw9">
       <main>
         <header class="h-100 pa4 bg-white shadow-4">
           <nav class="mb1">
@@ -76,28 +73,6 @@
         >
       </footer>
     </div>
-
-    <style type="text/css">
-      body {
-        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4' viewBox='0 0 4 4'%3E%3Cpath fill='%23E7040F' fill-opacity='1' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E");
-      }
-
-      main {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
-        grid-gap: 2rem;
-      }
-
-      .albums {
-        display: contents;
-      }
-
-      @media (min-width: 32em) {
-        header {
-          grid-column: span 2;
-        }
-      }
-    </style>
 
     <script src="./most-wanted.js"></script>
   </body>
