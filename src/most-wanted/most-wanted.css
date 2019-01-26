@@ -1,6 +1,7 @@
 @charset 'utf-8';
 
-@import '../../node_modules/tachyons-custom/src/tachyons.css';
+@import '../../node_modules/tachyons-custom/css/tachyons.css';
+@import '../../node_modules/tachyons-custom/src/_variables.css';
 
 body {
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4' viewBox='0 0 4 4'%3E%3Cpath fill='%23E7040F' fill-opacity='1' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E");
@@ -8,8 +9,8 @@ body {
 
 main {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
-  grid-gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(var(--width-5), 1fr));
+  grid-gap: var(--spacing-large);
 }
 
 .container {
