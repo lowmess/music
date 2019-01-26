@@ -128,7 +128,7 @@ const getUnowned = (owned, page = 1, albums = [], count = 0) =>
 // Create markup for album list
 const markup = album => {
   const html = `
-    <div class="flex flex-column bg-white shadow-4">
+    <div class="flex flex-column bg-white shadow-5">
       <div class="aspect-ratio aspect-ratio--1x1 bb b--light-gray">
         <div class="aspect-ratio-object">
           <img class="db w-100" src="${album.image}" alt="&ldquo;${
@@ -146,7 +146,7 @@ const markup = album => {
           ${album.artist}
         </p>
 
-        <p class="mb0 f7 fw7 light-silver tracked-mega ttu" style="margin-top: auto;">
+        <p class="mb0 f7 fw7 hot-pink tracked-mega ttu" style="margin-top: auto;">
           ${album.plays} plays
         </p>
       </div>

@@ -3,18 +3,22 @@
 @import '../../node_modules/tachyons-custom/css/tachyons.css';
 @import '../../node_modules/tachyons-custom/src/_variables.css';
 
-body {
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4' viewBox='0 0 4 4'%3E%3Cpath fill='%23E7040F' fill-opacity='1' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E");
+.container {
+  background-color: var(--hot-pink);
+  background-image: repeating-linear-gradient(
+      135deg,
+      transparent,
+      transparent var(--spacing-extra-large),
+      var(--hot-pink) var(--spacing-extra-large),
+      var(--hot-pink) var(--spacing-extra-extra-large)
+    ),
+    linear-gradient(135deg, var(--hot-pink) 20%, var(--navy));
 }
 
 main {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(var(--width-5), 1fr));
   grid-gap: var(--spacing-large);
-}
-
-.container {
-  margin: auto;
 }
 
 .albums {

@@ -7,23 +7,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="./most-wanted.css" />
   </head>
-  <body class="flex pa4 bg-red sans-serif lh-copy dark-gray">
-    <div class="container w-100 mw9">
-      <main>
-        <header class="h-100 pa4 bg-white shadow-4">
-          <nav class="mb1">
-            <ul class="list mv0 pa0">
-              <li>
-                <a href="/" class="link red hover-dark-red"
-                  >&#x2190; Back to Experiments List</a
-                >
-              </li>
-            </ul>
-          </nav>
-
-          <h1 class="mt0 mb3 f2 fw7 lh-title f1-ns f1-l">
+  <body class="min-vh-100 sans-serif lh-copy navy">
+    <div class="container pa4">
+      <main class="w-100 mw9 center">
+        <header class="h-100 pa4 bg-white shadow-5">
+          <h1 class="mv0 f2 fw7 lh-title f1-ns f1-l">
             Most Wanted Records
           </h1>
+
+          <hr class="w-100 mw5 ml0 mt2 mb4 ba bw2 b--hot-pink" />
 
           <p class="measure mv0">
             Everyone who collects vinyl has a list. This list may be written
@@ -46,33 +38,33 @@
 
         <div class="albums"></div>
       </main>
-
-      <footer
-        class="flex flex-column justify-center items-center mt4 f6 f5-ns flex-row-ns white"
-      >
-        <p class="mt0 mb2 mb0-ns">
-          Albums Owned: <span class="owned-count fw7"></span>
-        </p>
-
-        <span class="dn mh3 di-ns">/</span>
-
-        <p class="mv0">
-          Albums Searched: <span class="searched-count fw7"></span>
-        </p>
-
-        <span class="dn mh3 di-ns">/</span>
-
-        <a href="" class="lastfm-link link white hover-light-grey"
-          >Last.fm Profile</a
-        >
-
-        <span class="dn mh3 di-ns">/</span>
-
-        <a href="" class="discogs-link link white hover-light-grey"
-          >Discogs Collection</a
-        >
-      </footer>
     </div>
+
+    <footer
+      class="flex flex-column justify-center items-center pa4 f6 f5-ns flex-row-ns bg-white"
+    >
+      <p class="mt0 mb2 mb0-ns">
+        Albums Owned: <span class="owned-count fw7"></span>
+      </p>
+
+      <span class="dn mh3 di-ns">/</span>
+
+      <p class="mv0">
+        Albums Searched: <span class="searched-count fw7"></span>
+      </p>
+
+      <span class="dn mh3 di-ns">/</span>
+
+      <a href="" class="lastfm-link link hot-pink hover-navy"
+        >Last.fm Profile</a
+      >
+
+      <span class="dn mh3 di-ns">/</span>
+
+      <a href="" class="discogs-link link hot-pink hover-navy"
+        >Discogs Collection</a
+      >
+    </footer>
 
     <script src="./most-wanted.js"></script>
   </body>
