@@ -168,13 +168,11 @@ const markup = album => {
   // footer links
   const lastfm = document.querySelector('.lastfm-link')
   lastfm.href = `https://last.fm/user/${process.env.LASTFM_USER}`
-  lastfm.target = '_blank'
 
   const discogs = document.querySelector('.discogs-link')
   discogs.href = `https://discogs.com/user/${
     process.env.DISCOGS_USER
   }/collection`
-  discogs.target = '_blank'
 
   // albums
   const albums = document.querySelector('.albums')

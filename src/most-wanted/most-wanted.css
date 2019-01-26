@@ -3,6 +3,10 @@
 @import '../../node_modules/tachyons-custom/css/tachyons.css';
 @import '../../node_modules/tachyons-custom/src/_variables.css';
 
+svg {
+  fill: currentColor;
+}
+
 .container {
   background-color: var(--hot-pink);
   background-image: repeating-linear-gradient(
