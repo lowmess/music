@@ -11,108 +11,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="./most-wanted.css" />
   </head>
-  <body class="min-vh-100 bg-hot-pink sans-serif lh-copy navy">
-    <div class="container pa4">
-      <main class="w-100 mw9 center">
-        <header class="h-100 pa4 bg-white shadow-5">
-          <h1 class="mv0 f2 fw7 lh-title f1-ns f1-l">
-            Most Wanted Records
-          </h1>
-
-          <hr class="w-100 mw5 ml0 mt2 mb4 ba bw2 b--hot-pink" />
-
-          <p class="measure mv0">
-            Everyone who collects vinyl has a list. This list may be written
-            down, catalogued in an app, or just a nebulous idea floating about
-            in their head. I am, of course, referring to the namesake of this
-            experiment: the "most wanted" list.
-          </p>
-
-          <p class="measure mt3 mb0">
-            While some factors besides enjoyment or replayability of a record
-            play into desire for physical media (rarity probably being the most
-            prominent), I wanted to see if I could quantify exactly which
-            records should be on my list based on those factors. The simplest
-            way I could think of doing that was to get a list of my most-played
-            albums on Last.fm, tossing out any albums I already had logged into
-            my Discogs collection. So that's exactly what I did.
-          </p>
-        </header>
-
-        <div class="albums"></div>
-      </main>
-    </div>
-
-    <footer
-      class="flex flex-column justify-center pa4 bg-white shadow-5 flex-row-ns items-stretch-l pv5-l"
-    >
-      <div
-        class="flex-column justify-center mb3 b--hot-pink flex-ns mb0-ns br-ns pr5-ns flex-row-l pr5-l"
-      >
-        <div
-          class="flex flex-column justify-center lh-title mb3 b--hot-pink mb0-l br-l pr5-l"
-        >
-          <p class="mv0 f5 f4-l">Albums Owned:</p>
-          <span class="owned-count f2 fw7 f1-l">&mdash;</span>
-        </div>
-
-        <div class="flex flex-column justify-center lh-title pl5-l">
-          <p class="mv0 f5 f4-l">Albums Searched:</p>
-          <span class="searched-count f2 fw7 f1-l">&mdash;</span>
-        </div>
-      </div>
-
-      <div class="flex items-center b--hot-pink pl5-ns br-l pr5-l">
-        <ul class="list mv0 pl0">
-          <li>
-            <a href="" class="lastfm-link link hot-pink hover-navy"
-              >Last.fm Profile</a
-            >
-          </li>
-
-          <li class="mb3">
-            <a href="" class="discogs-link link hot-pink hover-navy"
-              >Discogs Collection</a
-            >
-          </li>
-
-          <li>
-            <a href="https://lowmess.com" class="link hot-pink hover-navy"
-              >Made by Alec Lomas</a
-            >
-          </li>
-
-          <li>
-            <a
-              href="https://github.com/lowmess/music/tree/master/src/most-wanted"
-              class="link hot-pink hover-navy"
-              >View on GitHub</a
-            >
-          </li>
-
-          <li>
-            <a href="/" class="link hot-pink hover-navy">Other Experiments</a>
-          </li>
-        </ul>
-      </div>
-
-      <div class="dn items-center pl5 flex-l">
-        <svg
-          class="w3 h-100"
-          height="32"
-          width="32"
-          preserveAspectRatio="xMidYMid meet"
-          viewBox="0 0 252 253"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <title>lowmess (Alec Lomas) logo</title>
-          <path
-            d="M220.5 126.25v81H126c-22.37 0-40.5-18.13-40.5-40.5v-94.5h-27v135h-27v-162h81V160c0 13.5 6.833 20.25 20.25 20.25h60.75v-27h-54v-108h27v81h54z"
-          />
-        </svg>
-      </div>
-    </footer>
-
+  <body>
+    <div
+      id="app"
+      class="min-vh-100 flex flex-column bg-hot-pink sans-serif lh-copy navy"
+    ></div>
     <script src="./most-wanted.js"></script>
   </body>
 </html>
