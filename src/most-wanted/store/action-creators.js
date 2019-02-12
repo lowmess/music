@@ -1,18 +1,18 @@
 import {
-  CHANGE_LASTFM_USER,
   CHANGE_DISCOGS_USER,
+  CHANGE_LASTFM_USER,
   CHANGE_ALBUMS,
   CHANGE_ERROR,
   SET_LOADING,
 } from './actions'
 
-const changeLastfmUser = user => ({
-  type: CHANGE_LASTFM_USER,
+const changeDiscogsUser = user => ({
+  type: CHANGE_DISCOGS_USER,
   payload: user,
 })
 
-const changeDiscogsUser = user => ({
-  type: CHANGE_DISCOGS_USER,
+const changeLastfmUser = user => ({
+  type: CHANGE_LASTFM_USER,
   payload: user,
 })
 
@@ -31,8 +31,8 @@ const setLoading = () => ({
 })
 
 export {
-  changeLastfmUser,
   changeDiscogsUser,
+  changeLastfmUser,
   changeAlbums,
   changeError,
   setLoading,

@@ -121,8 +121,8 @@ const getUnowned = (lastfmUser, owned, page = 1, albums = [], count = 0) =>
     .catch(console.error)
 
 async function getAlbums(
-  lastfmUser = process.env.LASTFM_USER,
-  discogsUser = process.env.DISCOGS_USER
+  discogsUser = process.env.DISCOGS_USER,
+  lastfmUser = process.env.LASTFM_USER
 ) {
   const owned = await getOwned(discogsUser)
   const unowned = await getUnowned(lastfmUser, owned)

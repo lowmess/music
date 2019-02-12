@@ -5,7 +5,13 @@ import Header from './components/Header'
 import Albums from './components/Albums'
 import Footer from './components/Footer'
 import { reducer, initialState } from './store'
-import { changeAlbums, changeError, setLoading } from './store/action-creators'
+import {
+  changeDiscogsUser,
+  changeLastfmUser,
+  changeAlbums,
+  changeError,
+  setLoading,
+} from './store/action-creators'
 import getAlbums from './lib/get-albums'
 
 const App = () => {
@@ -26,18 +32,18 @@ const App = () => {
   }
 
   // Handle form fields
-  // const handleDiscogsChange = event => {
-  //   dispatch(changeDiscogsUser(event.target.value))
-  // }
+  const handleDiscogsChange = event => {
+    dispatch(changeDiscogsUser(event.target.value))
+  }
 
-  // const handleLastfmChange = event => {
-  //   dispatch(changeLastfmUser(event.target.value))
-  // }
+  const handleLastfmChange = event => {
+    dispatch(changeLastfmUser(event.target.value))
+  }
 
-  // const handleFormSubmit = event => {
-  //   event.preventDefault()
-  //   getData()
-  // }
+  const handleFormSubmit = event => {
+    event.preventDefault()
+    getData()
+  }
 
   // Get default albums list on mount
   useEffect(() => {
@@ -48,7 +54,13 @@ const App = () => {
     <>
       <div className="container flex-1 pa4">
         <main className="w-100 mw9 center">
-          <Header />
+          <Header
+            discogsUser={state.discogsUser}
+            handleDiscogsChange={handleDiscogsChange}
+            lastfmUser={state.lastfmUser}
+            handleLastfmChange={handleLastfmChange}
+            handleFormSubmit={handleFormSubmit}
+          />
           <Albums albums={state.albums} />
         </main>
       </div>

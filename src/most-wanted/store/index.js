@@ -1,6 +1,6 @@
 import {
-  CHANGE_LASTFM_USER,
   CHANGE_DISCOGS_USER,
+  CHANGE_LASTFM_USER,
   CHANGE_ALBUMS,
   CHANGE_ERROR,
   SET_LOADING,
@@ -18,11 +18,11 @@ const initialState = {
 
 const reducer = (state, action) => {
   switch (action.type) {
-    case CHANGE_LASTFM_USER:
-      return Object.assign({}, state, { lastfmUser: action.payload })
-
     case CHANGE_DISCOGS_USER:
       return Object.assign({}, state, { discogsUser: action.payload })
+
+    case CHANGE_LASTFM_USER:
+      return Object.assign({}, state, { lastfmUser: action.payload })
 
     case CHANGE_ALBUMS:
       return Object.assign({}, state, {
