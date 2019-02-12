@@ -5,12 +5,14 @@ const Footer = ({ owned, searched, lastfmUser, discogsUser }) => (
     <div className="flex-column justify-center mb3 b--hot-pink flex-ns mb0-ns br-ns pr5-ns flex-row-l pr5-l">
       <div className="flex flex-column justify-center lh-title mb3 b--hot-pink mb0-l br-l pr5-l">
         <p className="mv0 f5 f4-l">Albums Owned:</p>
-        <span className="owned-count f2 fw7 f1-l">{owned}</span>
+        <span className="owned-count f2 fw7 f1-l">{owned || '\u2014'}</span>
       </div>
 
       <div className="flex flex-column justify-center lh-title pl5-l">
         <p className="mv0 f5 f4-l">Albums Searched:</p>
-        <span className="searched-count f2 fw7 f1-l">{searched}</span>
+        <span className="searched-count f2 fw7 f1-l">
+          {searched || '\u2014'}
+        </span>
       </div>
     </div>
 

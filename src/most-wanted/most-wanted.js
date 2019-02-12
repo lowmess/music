@@ -1,35 +1,37 @@
 import '@babel/polyfill'
-import React, { useState, useEffect } from 'react'
+import React, { useReducer, useEffect } from 'react'
 import ReactDOM from 'react-dom'
 import Header from './components/Header'
 import Albums from './components/Albums'
 import Footer from './components/Footer'
+import { reducer, initialState } from './store'
+import { changeAlbums, changeError, setLoading } from './store/action-creators'
 import getAlbums from './lib/get-albums'
 
 const App = () => {
   // Initialize state
-  const [discogsUser, setDiscogsUser] = useState(process.env.DISCOGS_USER) // eslint-disable-line no-unused-vars
-  const [lastfmUser, setLastfmUser] = useState(process.env.LASTFM_USER) // eslint-disable-line no-unused-vars
-  const [owned, setOwned] = useState('\u2014')
-  const [searched, setSearched] = useState('\u2014')
-  const [albums, setAlbums] = useState([])
+  const [state, dispatch] = useReducer(reducer, initialState)
 
   // Get albums list
   async function getData() {
-    const data = await getAlbums(discogsUser, lastfmUser)
+    dispatch(setLoading())
 
-    setOwned(data.owned)
-    setSearched(data.searched)
-    setAlbums(data.albums)
+    await getAlbums(state.discogsUser, state.lastfmUser)
+      .then(data => {
+        dispatch(changeAlbums(data.owned, data.searched, data.albums))
+      })
+      .catch(error => {
+        dispatch(changeError(error))
+      })
   }
 
   // Handle form fields
   // const handleDiscogsChange = event => {
-  //   setDiscogsUser(event.target.value)
+  //   dispatch(changeDiscogsUser(event.target.value))
   // }
 
   // const handleLastfmChange = event => {
-  //   setLastfmUser(event.target.value)
+  //   dispatch(changeLastfmUser(event.target.value))
   // }
 
   // const handleFormSubmit = event => {
@@ -44,18 +46,18 @@ const App = () => {
 
   return (
     <>
-      <div className="container pa4" style={{ flex: 1 }}>
+      <div className="container flex-1 pa4">
         <main className="w-100 mw9 center">
           <Header />
-          <Albums albums={albums} />
+          <Albums albums={state.albums} />
         </main>
       </div>
 
       <Footer
-        owned={owned}
-        searched={searched}
-        lastfmUser={lastfmUser}
-        discogsUser={discogsUser}
+        owned={state.owned}
+        searched={state.searched}
+        lastfmUser={state.lastfmUser}
+        discogsUser={state.discogsUser}
       />
     </>
   )

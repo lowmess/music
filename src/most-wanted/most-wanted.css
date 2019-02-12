@@ -3,10 +3,21 @@
 @import '../../node_modules/tachyons-custom/css/tachyons.css';
 @import '../../node_modules/tachyons-custom/src/_variables.css';
 
+/* Base rules */
 svg {
   fill: currentColor;
 }
 
+/* Tachyons add-ons */
+.mt-auto {
+  margin-top: auto;
+}
+
+.flex-1 {
+  flex: 1;
+}
+
+/* Generic styles */
 .container {
   background-color: var(--hot-pink);
   background-image: repeating-linear-gradient(

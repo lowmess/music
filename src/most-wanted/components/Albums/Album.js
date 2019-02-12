@@ -12,15 +12,12 @@ const Album = ({ album }) => (
       </div>
     </div>
 
-    <div className="flex flex-column pa3 lh-title" style={{ flex: 1 }}>
+    <div className="flex-1 flex flex-column pa3 lh-title">
       <p className="mv0 f4 fw7 f3-l">{album.name}</p>
 
       <p className="mt1 mb4 f5 f4-l">{album.artist}</p>
 
-      <p
-        className="mb0 f7 fw7 hot-pink tracked-mega ttu"
-        style={{ marginTop: 'auto' }}
-      >
+      <p className="mt-auto mb0 f7 fw7 hot-pink tracked-mega ttu">
         {album.plays} plays
       </p>
     </div>
