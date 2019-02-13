@@ -9,6 +9,10 @@ svg {
 }
 
 /* Tachyons add-ons */
+.h-1 {
+  height: 1em;
+}
+
 .ma-auto {
   margin: auto;
 }
@@ -44,11 +48,11 @@ main {
   display: contents;
 }
 
-.loading-image {
+.card-image {
   background-image: linear-gradient(135deg, var(--navy), var(--hot-pink));
 }
 
-.loading-text {
+.card-text {
   background-image: linear-gradient(to right, var(--navy), var(--hot-pink));
 }
 
