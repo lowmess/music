@@ -3,7 +3,7 @@ import React from 'react'
 const Album = ({ album }) => (
   <div className="flex flex-column bg-white shadow-5">
     <div className="aspect-ratio aspect-ratio--1x1 bb b--light-gray">
-      <div className="aspect-ratio-object">
+      <div className="aspect-ratio--object">
         <img
           className="db w-100"
           src={album.image}
