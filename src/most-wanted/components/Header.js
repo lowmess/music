@@ -18,17 +18,17 @@ const Header = ({
           Everyone who collects vinyl has a list. This list may be written down,
           catalogued in an app, or just a nebulous idea floating about in their
           head. I am, of course, referring to the namesake of this experiment:
-          the &ldquo;most wanted&rdquo; list.
+          the &ldquo;most wanted&rdquo;&nbsp;list.
         </p>
 
         <p className="measure mt3 mb0">
           While some factors besides enjoyment or replayability of a record play
-          into desire for physical media (rarity probably being the most
-          prominent), I wanted to see if I could quantify exactly which records
-          should be on my list based on those factors. The simplest way I could
-          think of doing that was to get a list of my most-played albums on
-          Last.fm, tossing out any albums I already had logged into my Discogs
-          collection. So that&rsquo;s exactly what I did.
+          into desire for physical media (like rarity and medium-fit), I wanted
+          to see if I could quantify exactly which records should be on my list
+          based on those factors. The simplest way I could think of doing that
+          was to get a list of my 25 most-played albums on Last.fm that I
+          didn&rsquo;t already have logged into my Discogs collection. Input
+          your usernames below to try it with your own&nbsp;collection.
         </p>
       </div>
 
