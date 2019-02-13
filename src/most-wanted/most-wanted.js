@@ -27,7 +27,7 @@ const App = () => {
         dispatch(changeAlbums(data.owned, data.searched, data.albums))
       })
       .catch(error => {
-        dispatch(changeError(error))
+        dispatch(changeError(error.message))
       })
   }
 
@@ -61,7 +61,12 @@ const App = () => {
             handleLastfmChange={handleLastfmChange}
             handleFormSubmit={handleFormSubmit}
           />
-          <Albums albums={state.albums} loading={state.loading} />
+
+          <Albums
+            albums={state.albums}
+            loading={state.loading}
+            error={state.error}
+          />
         </main>
       </div>
 

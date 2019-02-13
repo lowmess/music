@@ -8,23 +8,29 @@ const getOwned = (discogsUser, page = 1, records = []) =>
     `https://api.discogs.com/users/${discogsUser}/collection/folders/0/releases?per_page=100&page=${page}`
   )
     .then(response => {
-      if (response.status !== 200) {
+      if (response.status === 404) {
+        throw new Error(`Can't find that Discogs user`)
+      } else if (response.status !== 200) {
         throw new Error(`${response.status}: ${response.statusText}`)
       }
 
       return response.json()
     })
     .then(data => {
-      records = records.concat(
-        data.releases.map(release => ({
-          artists: release.basic_information.artists.map(artist => ({
-            name: artist.name,
-            anv: artist.anv,
-          })),
-          name: release.basic_information.title,
-          year: release.basic_information.year,
-        }))
-      )
+      if (data.releases) {
+        records = records.concat(
+          data.releases.map(release => ({
+            artists: release.basic_information.artists.map(artist => ({
+              name: artist.name,
+              anv: artist.anv,
+            })),
+            name: release.basic_information.title,
+            year: release.basic_information.year,
+          }))
+        )
+      } else {
+        throw new Error(`Discogs didn't respond with an album list`)
+      }
 
       if (page < data.pagination.pages) {
         return getOwned(discogsUser, page + 1, records)
@@ -32,7 +38,9 @@ const getOwned = (discogsUser, page = 1, records = []) =>
         return records
       }
     })
-    .catch(console.error)
+    .catch(error => {
+      throw new Error(error.message)
+    })
 
 // This function checks pretty loosely if the album is already owned.
 // This is because different services fuck up album and artist names
@@ -86,7 +94,9 @@ const getUnowned = (lastfmUser, owned, page = 1, albums = [], count = 0) =>
     }&limit=100&page=${page}&format=json`
   )
     .then(response => {
-      if (response.status !== 200) {
+      if (response.status === 404) {
+        throw new Error(`Can't find that Last.fm user`)
+      } else if (response.status !== 200) {
         throw new Error(`${response.status}: ${response.statusText}`)
       }
 
@@ -116,16 +126,24 @@ const getUnowned = (lastfmUser, owned, page = 1, albums = [], count = 0) =>
         } else {
           return { count, albums }
         }
+      } else {
+        throw new Error(`Last.fm didn't respond with an album list`)
       }
     })
-    .catch(console.error)
+    .catch(error => {
+      throw new Error(error.message)
+    })
 
 async function getAlbums(
   discogsUser = process.env.DISCOGS_USER,
   lastfmUser = process.env.LASTFM_USER
 ) {
-  const owned = await getOwned(discogsUser)
-  const unowned = await getUnowned(lastfmUser, owned)
+  const owned = await getOwned(discogsUser).catch(error => {
+    throw new Error(error.message)
+  })
+  const unowned = await getUnowned(lastfmUser, owned).catch(error => {
+    throw new Error(error.message)
+  })
 
   return {
     owned: owned.length,

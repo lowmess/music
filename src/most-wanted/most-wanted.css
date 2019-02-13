@@ -36,6 +36,7 @@ svg {
       var(--hot-pink) var(--spacing-extra-extra-large)
     ),
     linear-gradient(135deg, var(--hot-pink) 20%, var(--navy));
+  background-attachment: fixed;
 }
 
 main {
