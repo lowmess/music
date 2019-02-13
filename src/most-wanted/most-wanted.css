@@ -26,6 +26,11 @@ svg {
 }
 
 /* Generic styles */
+::selection {
+  background-color: var(--light-pink);
+  color: var(--navy);
+}
+
 .container {
   background-color: var(--hot-pink);
   background-image: repeating-linear-gradient(
