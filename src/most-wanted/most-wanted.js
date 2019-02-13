@@ -61,7 +61,7 @@ const App = () => {
             handleLastfmChange={handleLastfmChange}
             handleFormSubmit={handleFormSubmit}
           />
-          <Albums albums={state.albums} />
+          <Albums albums={state.albums} loading={state.loading} />
         </main>
       </div>
 

@@ -9,6 +9,10 @@ svg {
 }
 
 /* Tachyons add-ons */
+.ma-auto {
+  margin: auto;
+}
+
 .mt-auto {
   margin-top: auto;
 }
@@ -40,8 +44,30 @@ main {
   display: contents;
 }
 
+.loading-image {
+  background-image: linear-gradient(135deg, var(--navy), var(--hot-pink));
+}
+
+.loading-text {
+  background-image: linear-gradient(to right, var(--navy), var(--hot-pink));
+}
+
+.spinner {
+  border-left-color: transparent;
+  animation: spin 1s linear infinite;
+}
+
 @media (min-width: 38em) {
   header {
     grid-column: span 2;
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotateZ(0deg);
+  }
+  to {
+    transform: rotateZ(359deg);
   }
 }
