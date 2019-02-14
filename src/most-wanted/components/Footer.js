@@ -1,18 +1,16 @@
 import React from 'react'
 
-const Footer = ({ owned, searched, lastfmUser, discogsUser }) => (
+const Footer = ({ owned, skipped, lastfmUser, discogsUser }) => (
   <footer className="flex flex-column justify-center pa4 bg-white shadow-5 flex-row-ns items-stretch-l pv5-l">
     <div className="flex-column justify-center mb3 b--hot-pink flex-ns mb0-ns br-ns pr5-ns flex-row-l pr5-l">
       <div className="flex flex-column justify-center lh-title mb3 b--hot-pink mb0-l br-l pr5-l">
         <p className="mv0 f5 f4-l">Albums Owned:</p>
-        <span className="owned-count f2 fw7 f1-l">{owned || '\u2014'}</span>
+        <span className="f2 fw7 f1-l">{owned || '\u2014'}</span>
       </div>
 
       <div className="flex flex-column justify-center lh-title pl5-l">
-        <p className="mv0 f5 f4-l">Albums Searched:</p>
-        <span className="searched-count f2 fw7 f1-l">
-          {searched || '\u2014'}
-        </span>
+        <p className="mv0 f5 f4-l">Albums Skipped:</p>
+        <span className="f2 fw7 f1-l">{skipped || '\u2014'}</span>
       </div>
     </div>
 
@@ -21,7 +19,7 @@ const Footer = ({ owned, searched, lastfmUser, discogsUser }) => (
         <li>
           <a
             href={`https://last.fm/user/${lastfmUser}`}
-            className="lastfm-link link hot-pink hover-navy"
+            className="link hot-pink hover-navy"
           >
             Last.fm Profile
           </a>
@@ -30,7 +28,7 @@ const Footer = ({ owned, searched, lastfmUser, discogsUser }) => (
         <li className="mb3">
           <a
             href={`https://discogs.com/user/${discogsUser}/collection`}
-            className="discogs-link link hot-pink hover-navy"
+            className="link hot-pink hover-navy"
           >
             Discogs Collection
           </a>

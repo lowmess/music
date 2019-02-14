@@ -12,7 +12,7 @@ const initialState = {
   discogsUser: process.env.DISCOGS_USER,
   lastfmUser: process.env.LASTFM_USER,
   owned: null,
-  searched: null,
+  skipped: null,
   albums: [],
 }
 
@@ -29,7 +29,7 @@ const reducer = (state, action) => {
         loading: false,
         error: false,
         owned: action.payload.owned,
-        searched: action.payload.searched,
+        skipped: action.payload.skipped,
         albums: action.payload.albums,
       })
 
@@ -38,7 +38,7 @@ const reducer = (state, action) => {
         loading: false,
         error: action.payload,
         owned: null,
-        searched: null,
+        skipped: null,
         albums: [],
       })
 
@@ -47,12 +47,12 @@ const reducer = (state, action) => {
         loading: true,
         error: false,
         owned: null,
-        searched: null,
+        skipped: null,
         albums: [],
       })
 
     default:
-      throw new Error('No matching action type')
+      return state
   }
 }
 

@@ -16,9 +16,9 @@ const changeLastfmUser = user => ({
   payload: user,
 })
 
-const changeAlbums = (owned, searched, albums) => ({
+const changeAlbums = (owned, skipped, albums) => ({
   type: CHANGE_ALBUMS,
-  payload: { owned, searched, albums },
+  payload: { owned, skipped, albums },
 })
 
 const changeError = error => ({

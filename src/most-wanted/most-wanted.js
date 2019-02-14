@@ -24,7 +24,7 @@ const App = () => {
 
     await getAlbums(state.discogsUser, state.lastfmUser)
       .then(data => {
-        dispatch(changeAlbums(data.owned, data.searched, data.albums))
+        dispatch(changeAlbums(data.owned, data.skipped, data.albums))
       })
       .catch(error => {
         dispatch(changeError(error.message))
@@ -72,7 +72,7 @@ const App = () => {
 
       <Footer
         owned={state.owned}
-        searched={state.searched}
+        skipped={state.skipped}
         lastfmUser={state.lastfmUser}
         discogsUser={state.discogsUser}
       />
