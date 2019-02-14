@@ -18,7 +18,7 @@ const Album = ({ album }) => (
       <p className="mt1 mb4 f5 f4-l">{album.artist}</p>
 
       <p className="mt-auto mb0 f7 fw7 hot-pink tracked-mega ttu">
-        {album.plays} plays
+        #{album.rank} &middot; {album.plays} plays
       </p>
     </div>
   </div>
