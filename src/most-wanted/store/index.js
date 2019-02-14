@@ -19,37 +19,40 @@ const initialState = {
 const reducer = (state, action) => {
   switch (action.type) {
     case CHANGE_DISCOGS_USER:
-      return Object.assign({}, state, { discogsUser: action.payload })
+      return { ...state, discogsUser: action.payload }
 
     case CHANGE_LASTFM_USER:
-      return Object.assign({}, state, { lastfmUser: action.payload })
+      return { ...state, lastfmUser: action.payload }
 
     case CHANGE_ALBUMS:
-      return Object.assign({}, state, {
+      return {
+        ...state,
         loading: false,
         error: false,
         owned: action.payload.owned,
         skipped: action.payload.skipped,
         albums: action.payload.albums,
-      })
+      }
 
     case CHANGE_ERROR:
-      return Object.assign({}, state, {
+      return {
+        ...state,
         loading: false,
         error: action.payload,
         owned: null,
         skipped: null,
         albums: [],
-      })
+      }
 
     case SET_LOADING:
-      return Object.assign({}, state, {
+      return {
+        ...state,
         loading: true,
         error: false,
         owned: null,
         skipped: null,
         albums: [],
-      })
+      }
 
     default:
       return state
