@@ -11,8 +11,8 @@ import {
   changeAlbums,
   changeError,
   setLoading,
-} from './store/action-creators'
-import getAlbums from './lib/get-albums'
+} from './store/actionCreators'
+import getAlbums from './lib/getAlbums'
 
 const App = () => {
   // Initialize state
