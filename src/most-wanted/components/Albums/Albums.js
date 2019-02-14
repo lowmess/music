@@ -3,7 +3,13 @@ import Album from './Album'
 import Loading from './Loading'
 import ErrorComponent from './Error'
 
-const generateKey = string => string.toLowerCase().replace(' ', '-')
+const toSnakeCase = (...strings) =>
+  strings
+    .join(' ')
+    .toLowerCase()
+    .replace(/[^\w\d\s]/g, ' ')
+    .trim()
+    .replace(/\s+/g, '-')
 
 const Albums = ({ albums, loading, error }) => (
   <div className="albums">
@@ -12,7 +18,7 @@ const Albums = ({ albums, loading, error }) => (
     {error && <ErrorComponent error={error} />}
 
     {albums.map(album => {
-      return <Album album={album} key={generateKey(album.name)} />
+      return <Album album={album} key={toSnakeCase(album.artist, album.name)} />
     })}
   </div>
 )
