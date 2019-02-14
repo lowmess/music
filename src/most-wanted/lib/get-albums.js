@@ -87,7 +87,7 @@ const albumIsOwned = (album, owned) => {
 // collection. Similar to above, the function will recursively call itself
 // until at least 25 unowned albums are displayed, or Last.fm runs out of data
 // for us to scrape (congrats on the giant album collection in the latter case).
-const getUnowned = (lastfmUser, owned, page = 1, albums = [], count = 0) =>
+const getUnowned = (lastfmUser, owned, page = 1, albums = [], skipped = 0) =>
   fetch(
     `https://ws.audioscrobbler.com/2.0/?method=user.gettopalbums&user=${lastfmUser}&api_key=${
       process.env.LASTFM_KEY
@@ -105,27 +105,27 @@ const getUnowned = (lastfmUser, owned, page = 1, albums = [], count = 0) =>
     .then(data => {
       if (data.topalbums) {
         data.topalbums.album.every(album => {
-          count++
-
           const formattedAlbum = {
             artist: album.artist.name,
             name: album.name,
             plays: album.playcount,
             image: album.image.pop()['#text'],
-            rank: count,
+            rank: album['@attr'].rank,
           }
 
           if (!albumIsOwned(formattedAlbum, owned)) {
             albums = [...albums, formattedAlbum]
+          } else {
+            skipped++
           }
 
           return albums.length < 25
         })
 
         if (albums.length < 25 && page < data.topalbums['@attr'].totalPages) {
-          return getUnowned(lastfmUser, owned, page + 1, albums, count)
+          return getUnowned(lastfmUser, owned, page + 1, albums, skipped)
         } else {
-          return { skipped: count - 25, albums }
+          return { skipped, albums }
         }
       } else {
         throw new Error(`Last.fm didn't respond with an album list`)
