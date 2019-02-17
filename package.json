@@ -19,6 +19,7 @@
   },
   "dependencies": {
     "@babel/polyfill": "^7.2.5",
+    "prop-types": "^15.7.2",
     "react": "^16.8.1",
     "react-dom": "^16.8.1",
     "tachyons-custom": "^4.9.6",
