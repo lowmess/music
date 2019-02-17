@@ -25,6 +25,10 @@ svg {
   flex: 1;
 }
 
+.o-cover {
+  object-fit: cover;
+}
+
 /* Generic styles */
 ::selection {
   background-color: var(--light-pink);
@@ -54,8 +58,22 @@ main {
   display: contents;
 }
 
-.card-image {
+.card-image,
+.album-image[alt]:after {
   background-image: linear-gradient(135deg, var(--navy), var(--hot-pink));
+}
+
+.album-image[alt] {
+  position: relative;
+}
+
+.album-image[alt]:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
 }
 
 .card-text {

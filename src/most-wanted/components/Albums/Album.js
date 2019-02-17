@@ -3,10 +3,10 @@ import PropTypes from 'prop-types'
 
 const Album = ({ album }) => (
   <div className="flex flex-column bg-white shadow-5">
-    <div className="aspect-ratio aspect-ratio--1x1 bb b--light-gray">
+    <div className="card-image aspect-ratio aspect-ratio--1x1 bb b--light-gray">
       <div className="aspect-ratio--object">
         <img
-          className="db w-100"
+          className="album-image db w-100 h-100 o-cover"
           src={album.image}
           alt={`\u201C${album.name}\u201D album cover`}
         />
