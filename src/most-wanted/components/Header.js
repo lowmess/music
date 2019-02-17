@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
 const Header = ({
   discogsUser,
@@ -98,6 +99,14 @@ const Header = ({
       </div>
     </header>
   )
+}
+
+Header.propTypes = {
+  discogsUser: PropTypes.string.isRequired,
+  handleDiscogsChange: PropTypes.func.isRequired,
+  lastfmUser: PropTypes.string.isRequired,
+  handleLastfmChange: PropTypes.func.isRequired,
+  handleFormSubmit: PropTypes.func.isRequired,
 }
 
 export default Header

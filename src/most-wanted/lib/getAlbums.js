@@ -108,9 +108,9 @@ const getUnowned = (lastfmUser, owned, page = 1, albums = [], skipped = 0) =>
           const formattedAlbum = {
             artist: album.artist.name,
             name: album.name,
-            plays: album.playcount,
+            plays: parseInt(album.playcount, 10),
             image: album.image.pop()['#text'],
-            rank: album['@attr'].rank,
+            rank: parseInt(album['@attr'].rank, 10),
           }
 
           if (!albumIsOwned(formattedAlbum, owned)) {

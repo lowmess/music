@@ -1,5 +1,6 @@
 import React from 'react'
-import Album from './Album'
+import PropTypes from 'prop-types'
+import Album, { albumPropType } from './Album'
 import Loading from './Loading'
 import ErrorComponent from './Error'
 
@@ -22,5 +23,11 @@ const Albums = ({ albums, loading, error }) => (
     })}
   </div>
 )
+
+Albums.propTypes = {
+  albums: PropTypes.arrayOf(albumPropType).isRequired,
+  loading: PropTypes.bool.isRequired,
+  error: PropTypes.oneOfType([PropTypes.string, PropTypes.bool]).isRequired,
+}
 
 export default Albums

@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
 const ErrorComponent = ({ error }) => (
   <div className="flex flex-column bg-white shadow-5">
@@ -32,5 +33,9 @@ const ErrorComponent = ({ error }) => (
     </div>
   </div>
 )
+
+ErrorComponent.propTypes = {
+  error: PropTypes.string,
+}
 
 export default ErrorComponent

@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
 const Album = ({ album }) => (
   <div className="flex flex-column bg-white shadow-5">
@@ -23,5 +24,17 @@ const Album = ({ album }) => (
     </div>
   </div>
 )
+
+export const albumPropType = PropTypes.exact({
+  name: PropTypes.string.isRequired,
+  artist: PropTypes.string.isRequired,
+  image: PropTypes.string.isRequired,
+  rank: PropTypes.number.isRequired,
+  plays: PropTypes.number.isRequired,
+})
+
+Album.propTypes = {
+  album: albumPropType.isRequired,
+}
 
 export default Album

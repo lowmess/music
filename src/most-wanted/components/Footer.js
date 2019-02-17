@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
 const Footer = ({ owned, skipped, lastfmUser, discogsUser }) => (
   <footer className="flex flex-column justify-center pa4 bg-white shadow-5 flex-row-ns items-stretch-l pv5-l">
@@ -72,5 +73,12 @@ const Footer = ({ owned, skipped, lastfmUser, discogsUser }) => (
     </div>
   </footer>
 )
+
+Footer.propTypes = {
+  owned: PropTypes.number,
+  skipped: PropTypes.number,
+  discogsUser: PropTypes.string.isRequired,
+  lastfmUser: PropTypes.string.isRequired,
+}
 
 export default Footer
