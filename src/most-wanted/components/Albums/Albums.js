@@ -13,7 +13,7 @@ const toSnakeCase = (...strings) =>
     .replace(/\s+/g, '-')
 
 const Albums = ({ albums, loading, error }) => (
-  <div className="albums">
+  <>
     {loading && <Loading />}
 
     {error && <ErrorComponent error={error} />}
@@ -21,7 +21,7 @@ const Albums = ({ albums, loading, error }) => (
     {albums.map(album => {
       return <Album album={album} key={toSnakeCase(album.artist, album.name)} />
     })}
-  </div>
+  </>
 )
 
 Albums.propTypes = {

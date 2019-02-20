@@ -54,10 +54,6 @@ main {
   grid-gap: var(--spacing-large);
 }
 
-.albums {
-  display: contents;
-}
-
 .card-image,
 .album-image[alt]:after {
   background-image: linear-gradient(135deg, var(--navy), var(--hot-pink));
