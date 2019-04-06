@@ -52,7 +52,7 @@ const App = () => {
 
   return (
     <>
-      <div className="container flex-1 pa4">
+      <div className="container flex-1 pa3 pa4-ns">
         <main className="w-100 mw9 center">
           <Header
             discogsUser={state.discogsUser}

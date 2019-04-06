@@ -51,7 +51,7 @@ svg {
 main {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(var(--width-5), 1fr));
-  grid-gap: var(--spacing-large);
+  grid-gap: var(--spacing-medium);
 }
 
 .card-image,
@@ -79,6 +79,12 @@ main {
 .spinner {
   border-left-color: transparent;
   animation: spin 1s linear infinite;
+}
+
+@media (min-width: 30em) {
+  main {
+    grid-gap: var(--spacing-large);
+  }
 }
 
 @media (min-width: 38em) {
