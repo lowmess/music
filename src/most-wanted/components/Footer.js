@@ -50,11 +50,11 @@ const Footer = ({ owned, skipped, lastfmUser, discogsUser }) => (
           </a>
         </li>
 
-        <li>
+        {/* <li>
           <a href="/" className="link hot-pink hover-navy">
             Other Experiments
           </a>
-        </li>
+        </li> */}
       </ul>
     </div>
 
