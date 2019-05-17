@@ -6,6 +6,7 @@ const ErrorComponent = ({ error }) => (
     <div className="card-image aspect-ratio aspect-ratio--1x1 bb b--light-gray bg-hot-pink">
       <div className="aspect-ratio--object flex">
         <svg
+          role="presentation"
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 16 16"
           width="64"
