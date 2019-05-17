@@ -22,13 +22,15 @@ const App = () => {
   const getData = async () => {
     dispatch(setLoading())
 
-    await getAlbums(state.discogsUser, state.lastfmUser)
-      .then(data => {
-        dispatch(changeAlbums(data.owned, data.skipped, data.albums))
-      })
-      .catch(error => {
-        dispatch(changeError(error.message))
-      })
+    try {
+      const { owned, skipped, albums } = await getAlbums(
+        state.discogsUser,
+        state.lastfmUser
+      )
+      dispatch(changeAlbums(owned, skipped, albums))
+    } catch (error) {
+      dispatch(changeError(error.message))
+    }
   }
 
   // Handle form fields
