@@ -19,7 +19,7 @@ const App = () => {
   const [state, dispatch] = useReducer(reducer, initialState)
 
   // Get albums list
-  async function getData() {
+  const getData = async () => {
     dispatch(setLoading())
 
     await getAlbums(state.discogsUser, state.lastfmUser)
